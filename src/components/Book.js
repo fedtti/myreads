@@ -25,12 +25,13 @@ class Book extends Component {
                 <select
                     className="app__main__div__section__ul__li__div__select"
                     onChange={event => changeShelf(book, event.target.value)}
+                    value={book.shelf || "none"}
                 >
-                    <option default value="">Move to…</option>
+                    <option disabled value="">Move to…</option>
                     <option value="currentlyReading">Currently Reading</option>
                     <option value="wantToRead">Want to Read</option>
                     <option value="read">Read</option>
-                    <option value="">None</option>
+                    <option value="none">None</option>
                 </select>
             </div>
         );

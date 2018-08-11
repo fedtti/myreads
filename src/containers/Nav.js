@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link, Route } from 'react-router-dom';
 
-class Nav extends Component {
-    render() {
+function Nav(props) {
         return (
             <nav className="app__main__nav">
                 <Route
@@ -25,7 +24,6 @@ class Nav extends Component {
                 />
             </nav>
         );
-    }
 }
 
 export default Nav;

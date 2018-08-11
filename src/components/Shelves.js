@@ -43,35 +43,16 @@ class Shelves extends Component {
 
     render() {
         /**
-         * Create an empty array for each shelf to store the assigned books.
-         */
-        let currentlyReadingBooks = [];
-        let wantToReadBooks = [];
-        let readBooks = [];
-
-        /**
          * Turn the state into a prop.
          */
         const {books} = this.state;
 
         /**
          * Assign each book to the correct shelf.
-         */
-        books.forEach(book => {
-            switch(book.shelf) {
-                case 'currentlyReading':
-                    currentlyReadingBooks.push(book);
-                    break;
-                case 'wantToRead':
-                    wantToReadBooks.push(book);
-                    break;
-                case 'read':
-                    readBooks.push(book);
-                    break;
-                default:
-                    break;
-            }
-        })
+        */
+        let currentlyReadingBooks = books.filter(({ shelf }) => shelf === 'currentlyReading');
+        let wantToReadBooks = books.filter(({ shelf }) => shelf === 'wantToRead');
+        let readBooks = books.filter(({ shelf }) => shelf === 'read');
 
         /**
          * Set the shelves properties.

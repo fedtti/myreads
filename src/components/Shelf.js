@@ -8,6 +8,9 @@ class Shelf extends Component {
          */
         const {books, changeShelf, label, type} = this.props;
 
+        /**
+         * Set a default cover for the books (if missing).
+         */
         const cover = 'https://books.google.com/googlebooks/images/no_cover_thumb.gif';
 
         return (
